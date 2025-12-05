@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f3f3f3;
+      margin: 0;
+      padding: 0;
+    }
+    .login-box {
+      width: 350px;
+      margin: 120px auto;
+      background: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      font-size: 16px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #333;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      font-size: 18px;
+    }
+    .error {
+      color: red;
+      text-align: center;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    /* Marksheet Section */
+    #marksheet {
+      display: none;
+      padding: 30px;
+    }
+    h1 {
+      text-align: center;
+      border-bottom: 2px solid black;
+      padding-bottom: 10px;
+      text-transform: uppercase;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #000;
+      padding: 8px;
+    }
+    .pass { color: green; font-weight: bold; }
+    .fail { color: red; font-weight: bold; }
+    img {
+      float: right;
+      width: 120px;
+      height: 120px;
+    }
+  </style>
+
+</head>
+<body>
+
+<!-- LOGIN PAGE -->
+<div class="login-box" id="loginPage">
+  <h2 style="text-align:center;">Login</h2>
+  <input type="text" id="user" placeholder="Enter Username">
+  <input type="password" id="pass" placeholder="Enter Password">
+  <button onclick="login()">Login</button>
+  <p class="error" id="errorMsg"></p>
+</div>
+
+
+<!-- MARKSHEET PAGE -->
+<div id="marksheet">
+
+  <h1>NASHIK COLLEGE OF MANAGEMENT AND TECHNOLOGY</h1>
+
+  <img src="https://via.placeholder.com/120x120.png?text=Photo">
+
+  <p><strong>NAME:</strong> GAJARE SWAPNIL SOPAN</p>
+  <p><strong>SEAT NO:</strong> K02306</p>
+  <p><strong>MOTHER’S NAME:</strong> HEMA</p>
+  <p><strong>COURSE:</strong> B.Sc (Computer Science)</p>
+  <p><strong>YEAR:</strong> SECOND YEAR</p>
+
+  <table>
+    <tr>
+      <th>Sub Code</th>
+      <th>Subject Name</th>
+      <th>Result</th>
+    </tr>
+    <tr><td>AEC-101</td><td>English : Professional Communication Skills</td><td class="pass">PASS</td></tr>
+    <tr><td>CS-101-T</td><td>Problem Solving Using 'C' Programming</td><td class="fail">FAIL</td></tr>
+    <tr><td>CS-102-P</td><td>Lab Course Based on CS-101-T</td><td class="pass">PASS</td></tr>
+    <tr><td>ELC-101-T</td><td>Principles of Analog Electronics</td><td class="pass">PASS</td></tr>
+    <tr><td>ELC-102-P</td><td>Electronics Practical Course I</td><td class="pass">PASS</td></tr>
+    <tr><td>IKS</td><td>Indian Knowledge System (IKS)</td><td class="pass">PASS</td></tr>
+    <tr><td>MTC-101-T</td><td>Matrix Algebra</td><td class="pass">PASS</td></tr>
+    <tr><td>MTC-102-P</td><td>Mathematics Practical</td><td class="pass">PASS</td></tr>
+    <tr><td>SEC-101-CS</td><td>Statistical Methods for Computer Science I</td><td class="pass">PASS</td></tr>
+    <tr><td>VEC-101-T</td><td>Environment Education-I</td><td class="pass">PASS</td></tr>
+  </table>
+
+  <p><strong>NOTE:</strong> You can perform good in C Programming.</p>
+
+</div>
+
+
+<script>
+  function login() {
+    let username = document.getElementById("user").value;
+    let password = document.getElementById("pass").value;
+
+    if (username === "swapnil" && password === "swapnil@123") {
+      document.getElementById("loginPage").style.display = "none";
+      document.getElementById("marksheet").style.display = "block";
+    } else {
+      document.getElementById("errorMsg").innerText = "Invalid Username or Password!";
+    }
+  }
+</script>
+
+</body>
+</html>
